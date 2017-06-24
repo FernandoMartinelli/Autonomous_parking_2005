@@ -1,0 +1,38 @@
+# Project: AutoParkingC++
+# Makefile created by Dev-C++ 4.9.8.0
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = ../AutoParkingBackup31-07-2005/Interface.o ../AutoParkingBackup31-07-2005/cenario.o ../AutoParkingBackup31-07-2005/ctrlManobra.o ../AutoParkingBackup31-07-2005/carro.o $(RES)
+LINKOBJ  = ../AutoParkingBackup31-07-2005/Interface.o ../AutoParkingBackup31-07-2005/cenario.o ../AutoParkingBackup31-07-2005/ctrlManobra.o ../AutoParkingBackup31-07-2005/carro.o $(RES)
+LIBS =  -L"C:/Arquivos de programas/Dev-Cpp/lib" 
+INCS =  -I"C:/Arquivos de programas/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Arquivos de programas/Dev-Cpp/include/c++"  -I"C:/Arquivos de programas/Dev-Cpp/include/c++/mingw32"  -I"C:/Arquivos de programas/Dev-Cpp/include/c++/backward"  -I"C:/Arquivos de programas/Dev-Cpp/include" 
+BIN  = AUTOPA~1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS = $(INCS) 
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before AUTOPA~1.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(LINKOBJ)
+	$(CPP) $(LINKOBJ) -o "AUTOPA~1.exe" $(LIBS)
+
+../AutoParkingBackup31-07-2005/Interface.o: ../AutoParkingBackup31-07-2005/Interface.cpp
+	$(CPP) -c ../AutoParkingBackup31-07-2005/Interface.cpp -o ../AutoParkingBackup31-07-2005/Interface.o $(CXXFLAGS)
+
+../AutoParkingBackup31-07-2005/cenario.o: ../AutoParkingBackup31-07-2005/cenario.cpp
+	$(CPP) -c ../AutoParkingBackup31-07-2005/cenario.cpp -o ../AutoParkingBackup31-07-2005/cenario.o $(CXXFLAGS)
+
+../AutoParkingBackup31-07-2005/ctrlManobra.o: ../AutoParkingBackup31-07-2005/ctrlManobra.cpp
+	$(CPP) -c ../AutoParkingBackup31-07-2005/ctrlManobra.cpp -o ../AutoParkingBackup31-07-2005/ctrlManobra.o $(CXXFLAGS)
+
+../AutoParkingBackup31-07-2005/carro.o: ../AutoParkingBackup31-07-2005/carro.cpp
+	$(CPP) -c ../AutoParkingBackup31-07-2005/carro.cpp -o ../AutoParkingBackup31-07-2005/carro.o $(CXXFLAGS)
